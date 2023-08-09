@@ -1,0 +1,26 @@
+package com.example.myapplication5
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+
+class MainActivity: AppCompatActivity() {
+    lateinit var dynamicFragment: DynamicFragment
+    lateinit var fragmentManager: FragmentManager
+    lateinit var transaction: FragmentTransaction
+    I override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        fragmentManager supportFragmentManage /
+        if (savedInstanceState nutt) (
+                dynamicFragment DynamicFragment) // 1
+        transaction fragmentManager.beg Transaction ( // 3
+            transaction.setReordering Allowed (t. )
+                    transaction.add(R.id. fragmentContainer, dynamicFraqment, tag: "dynamic_fragment")
+        transaction.commit()
+    } else {
+        dynamicFragment fragmentManager. findFragmentByTag(teg "dynamic_fragment") as DynamicFragment
+    }
+
+
+}
